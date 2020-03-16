@@ -1,12 +1,10 @@
 const mongoose = require('mongoose')
 
-const DoacaoSchema = new mongoose.Schema({
+const DoacoesSchema = new mongoose.Schema({
   doador_data: {
-    doador_id: mongoose.Schema.Types.ObjectId,
-    username: String,
-    endereco: String,
-    cidade: String,
-    estado: String
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Users',
+      required: true
   },
   tipo: String,
   descricao: String,
@@ -15,4 +13,4 @@ const DoacaoSchema = new mongoose.Schema({
   fotos: String
 })
 
-module.exports = mongoose.model('Doacoes', DoacaoSchema)
+module.exports = mongoose.model('Doacoes', DoacoesSchema)
