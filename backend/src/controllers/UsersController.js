@@ -2,19 +2,22 @@ const User = require('../models/Users')
 
 module.exports = {
   async store(request, response) {
-    console.log(request.body)
 
-    const { username, endereco, cidade, estado } = request.body
+    const { username, endereco, cidade, estado, latitude, longitude } = request.body
 
-    console.log(username, endereco, cidade, estado)
+    const location = {
+      type: 'Point',
+      coordinates: [latitude, longitude]
+    }
+
     //@arthurc_bot
     const newUser = await User.create({
       username,
       endereco,
       cidade,
-      estado
+      estado,
+      location
     })
-
     response.json(newUser._id)
   }
 }

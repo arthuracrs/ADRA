@@ -8,7 +8,7 @@ mongoose.connect('mongodb+srv://omnistack:123@cluster0-hjizl.mongodb.net/test?re
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
-
+mongoose.set('useCreateIndex', true);
 const app = express()
 app.use(cors())
 app.use(express.json())

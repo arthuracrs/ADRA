@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 
+const PointSchema = require('./utils/PointSchema')
+
 const DoacoesSchema = new mongoose.Schema({
   doador_data: {
       type: mongoose.Schema.Types.ObjectId,
