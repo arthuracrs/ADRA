@@ -1,8 +1,8 @@
 const Doacao = require('../models/Doacoes')
-const User = require('../models/Users')
+
+const PointSchema = require('../models/utils/PointSchema')
 
 module.exports = {
-
   async index(request, response) {
     const queryResult = await Doacao.find().populate('doador_data')
 
@@ -11,19 +11,19 @@ module.exports = {
 
   async store(request, response) {
 
-    const { doador_id, tipo, descricao, data, horario, fotos } = request.body
+    const {
+      doador_id,
+      local_data,
+      doacao_data
+    } = request.body
 
     //@arthurc_bot
     const newDoacao = await Doacao.create({
       doador_data: doador_id,
-      tipo,
-      descricao,
-      data,
-      horario,
-      fotos
+      local_data,
+      doacao_data
     })
 
     response.json(newDoacao)
   }
-
 }

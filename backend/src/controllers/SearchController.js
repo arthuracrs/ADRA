@@ -1,23 +1,18 @@
-const User = require('../models/Users')
-
+//const User = require('../models/Users')
+const Doacoes = require('../models/Doacoes')
 module.exports = {
     async index(request, response) {
-        //console.log(request.query)
+        console.log(request.query)
 
         const { latitude, longitude } = request.query
-        
-        const doacoes = await User.find({
-            location:{
-                $near:{
-                    $geometry:{
-                        type: 'Point',
-                        coordinates:[ latitude, longitude]
-                    },
-                    $maxDistance: 10000
-                }
+
+        const doacoes = await Doacoes.find({ "local_data.location": {
+            $near: {
+                $geometry: { type: 'Point', coordinates: [latitude, longitude] }, $maxDistance: 10000
             }
-        })
-        //console.log(doacoes)
+        }
+        }).populate('doador_data')
+
         response.json(doacoes)
-    }
+}
 }

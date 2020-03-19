@@ -11,6 +11,11 @@ routes.post('/doacoes', DoacoesController.store)
 
 routes.get('/search', SerachController.index)
 
+routes.get('/shazam', (req, res) => {
+    console.log(req.query)
+    console.log('hshshsh')
+})
+
 routes.post('/users', UsersController.store)
 //@arthurc_bot
 module.exports = routes
