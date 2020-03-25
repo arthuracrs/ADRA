@@ -21,8 +21,6 @@ export default function Home() {
     console.log('longitude: ' + coords[1])
 
     const response = await axios.get('http://localhost:3001/search', { params: {latitude: -9.3891154, longitude: -40.4897314} });
-
-    console.log(response.data)
     setDoacoes(response.data)
   }
 

@@ -14,6 +14,7 @@ routes.get('/search', SerachController.index)
 routes.get('/shazam', (req, res) => {
     console.log(req.query)
     console.log('hshshsh')
+    res.json({shazam: "ado ado ado"})
 })
 
 routes.post('/users', UsersController.store)

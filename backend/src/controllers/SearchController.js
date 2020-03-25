@@ -2,7 +2,6 @@
 const Doacoes = require('../models/Doacoes')
 module.exports = {
     async index(request, response) {
-        console.log(request.query)
 
         const { latitude, longitude } = request.query
 
