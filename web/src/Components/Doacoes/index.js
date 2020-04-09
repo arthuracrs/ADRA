@@ -1,55 +1,53 @@
 import React, { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 import axios from 'axios'
 
-
 import './style.css'
+
+import logo from './assets/logo.png'
 import tshirt from './assets/t-shirt.svg'
 import basicbasket from './assets/basicbasket.svg'
 
-
 export default function Home() {
-  const [doacoes, setDoacoes] = useState([])
+  const [donations, setDonations] = useState([])
 
-  const [coords, setCoords] = useState([])
-
-  async function loadDoacoes() {
-    await navigator.geolocation.getCurrentPosition((position) => {
-      const { latitude, longitude } = position.coords
-      setCoords([latitude, longitude])
-    })
-    console.log('latitude: ' + coords[0])
-    console.log('longitude: ' + coords[1])
-
-    const response = await axios.get('http://localhost:3001/search', { params: {latitude: -9.3891154, longitude: -40.4897314} });
-    setDoacoes(response.data)
+  async function loadDonations() {
+    const response = await axios.get('http://192.168.1.6:3001/search', { params: { latitude: -9.3891154, longitude: -40.4897314 } });
+    setDonations(response.data)
   }
 
   useEffect(() => {
-    loadDoacoes()
+    loadDonations()
   }, [])
 
   return (
-    <div className="doacoes">
-      <h1>Doações</h1>
-      <div className="location">
-        <h2>minha location</h2>
-        <form>
-          <div>
-            <input type="text" placeholder="latitude" value={coords[0]} onChange={e => setCoords[(e.target.value)]} />
-            <input type="text" placeholder="longitude" value={coords[1]} onChange={e => setCoords([])} />
-          </div>
-        </form>
+    <div className="donations-container">
+      <div className="back-menu">
+        <div className="menu">
+          <img src={logo} alt="" className="logo" />
+          <ul>
+            <li>
+              <Link to="/doacoes" className="link">Doações</Link>
+            </li>
+            <li>
+              <Link to="/about" className="link">Sobre</Link>
+            </li>
+            <li>
+              <Link to="/users" className="link">Users</Link>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div className='list'>
-        {doacoes.map((x) =>
-          <div key={x._id} href='#' className="item">
+      <div className='donations-list'>
+        {donations.map((x) =>
+          <div key={x._id} className="item">
             <div className='container-1'>
-              <img alt="icone" src={x.tipo === 'alimento' ? basicbasket : tshirt} />
-              <div className='dataDonation'>
-                <strong>{x.doador_data.username}</strong>
-                <span>{x.doador_data.endereco}</span>
-                <span>{x.doador_data.cidade}</span>
-              </div>
+              <img className="icon" alt="icon" src={x.tipo === 'food' ? basicbasket : tshirt} />
+              <ul className='donation-data'>
+                <li> <strong>Nome: </strong>{x.doador_data.username}</li>
+                <li><strong>endereço: </strong> {x.doador_data.endereco}</li>
+                <li><strong>Cidade: </strong>{x.doador_data.cidade}</li>
+              </ul>
             </div>
             <div className='container-2'>
               <a href='/#'>acessar</a>
