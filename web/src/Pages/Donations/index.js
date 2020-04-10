@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
-import axios from 'axios'
+import api from '../../services/api'
+import NavBar from '../../Components/NavBar/'
 
 import './style.css'
 
-import logo from './assets/logo.png'
 import tshirt from './assets/t-shirt.svg'
 import basicbasket from './assets/basicbasket.svg'
 
@@ -12,7 +11,7 @@ export default function Home() {
   const [donations, setDonations] = useState([])
 
   async function loadDonations() {
-    const response = await axios.get('http://192.168.1.6:3001/search', { params: { latitude: -9.3891154, longitude: -40.4897314 } });
+    const response = await api.get('/search', { params: { latitude: -9.3891154, longitude: -40.4897314 } });
     setDonations(response.data)
   }
 
@@ -22,22 +21,7 @@ export default function Home() {
 
   return (
     <div className="donations-container">
-      <div className="back-menu">
-        <div className="menu">
-          <img src={logo} alt="" className="logo" />
-          <ul>
-            <li>
-              <Link to="/doacoes" className="link">Doações</Link>
-            </li>
-            <li>
-              <Link to="/about" className="link">Sobre</Link>
-            </li>
-            <li>
-              <Link to="/users" className="link">Users</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <NavBar />
       <div className='donations-list'>
         {donations.map((x) =>
           <div key={x._id} className="item">
@@ -45,7 +29,7 @@ export default function Home() {
               <img className="icon" alt="icon" src={x.tipo === 'food' ? basicbasket : tshirt} />
               <ul className='donation-data'>
                 <li> <strong>Nome: </strong>{x.doador_data.username}</li>
-                <li><strong>endereço: </strong> {x.doador_data.endereco}</li>
+                <li><strong>Endereço: </strong> {x.doador_data.endereco}</li>
                 <li><strong>Cidade: </strong>{x.doador_data.cidade}</li>
               </ul>
             </div>

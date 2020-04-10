@@ -1,10 +1,8 @@
-const Doacao = require('../models/Doacoes')
-
-const PointSchema = require('../models/utils/PointSchema')
+const Donations = require('../models/Donations')
 
 module.exports = {
   async index(request, response) {
-    const queryResult = await Doacao.find().populate('doador_data')
+    const queryResult = await Donations.find().populate('doador_data')
 
     response.send(queryResult)
   },
@@ -18,7 +16,7 @@ module.exports = {
     } = request.body
 
     //@arthurc_bot
-    const newDoacao = await Doacao.create({
+    const newDoacao = await Donations.create({
       doador_data: doador_id,
       local_data,
       doacao_data

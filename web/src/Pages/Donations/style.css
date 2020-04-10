@@ -1,52 +1,6 @@
 .donations-container{
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-}
-
-.logo{
-  max-width: 100px;
-  max-height: 100px;
-}
-
-.back-menu{
-  background-color: white;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
-.menu{
-  max-width: 900px;
-  background-color: white;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: space-around;
-}
-
-.menu ul{
-  display: grid;
-  grid-template-columns: max-content max-content max-content;
-  gap: 10px;
-  font-size: x-large;
-  box-sizing: border-box;
-  padding: 10px;
-}
-
-.menu li{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: right 20px;
-  box-sizing: border-box;
-}
-
-.menu li .link{
-  color: #007960;
-  text-decoration: none;
-  
 }
 
 .donations-list{
@@ -54,7 +8,7 @@
   margin: 0 auto;
   width: 100%;
   height: 100%;
-  max-width: 1100px;
+  max-width: 900px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 380px));
   gap: 20px;
@@ -66,17 +20,14 @@
   width: 100%;
   padding: 20px;
   border-radius: 5px;
-  box-sizing: border-box;
 }
 
 .donations-list .item .icon{
   width: 100px;
   height: 100px;
-  padding: 5px;
   border-radius: 5px;
   background-color: #007B61FF;
   padding:10px;
-  box-sizing: border-box;
 }
 
 .donations-list .item .container-1{
@@ -105,9 +56,4 @@
 
 .donations-list .item .container-2 a:visited{
   text-decoration: none;
-}
-
-.donations-list .item .container-2 .donation-data{
-  display: flex;
-
 }

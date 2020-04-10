@@ -1,8 +1,7 @@
-const User = require('../models/Users')
+const Users = require('../models/Users')
 
 module.exports = {
   async store(request, response) {
-
     const { username, endereco, cidade, estado, latitude, longitude } = request.body
 
     const location = {
@@ -11,7 +10,7 @@ module.exports = {
     }
 
     //@arthurc_bot
-    const newUser = await User.create({
+    const newUser = await Users.create({
       username,
       endereco,
       cidade,

@@ -1,0 +1,38 @@
+.back-menu {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    max-width: 900px;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu .logo {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.menu ul {
+    display: grid;
+    grid-template-columns: max-content max-content max-content;
+    gap: 10px;
+    font-size: x-large;
+    padding: 10px;
+}
+
+.menu ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu li .link {
+    color: #007960;
+    text-decoration: none;
+}

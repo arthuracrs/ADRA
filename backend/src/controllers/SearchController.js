@@ -1,12 +1,11 @@
-//const User = require('../models/Users')
-const Doacoes = require('../models/Doacoes')
+const Donations = require('../models/Donations')
+
 module.exports = {
     async index(request, response) {
-        console.log('recebido')
         try {
             const { latitude, longitude } = request.query
 
-            const doacoes = await Doacoes.find({
+            const donations = await Donations.find({
                 "local_data.location": {
                     $near: {
                         $geometry: { type: 'Point', coordinates: [latitude, longitude] },
@@ -14,7 +13,7 @@ module.exports = {
                     }
                 }
             }).populate('doador_data')
-            response.json(doacoes)
+            response.json(donations)
         } catch (error) {
             console.log(error)
         }

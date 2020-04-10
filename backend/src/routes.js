@@ -1,24 +1,21 @@
 const { Router } = require('express')
 
-const DoacoesController = require('./controllers/DoacoesController')
+const DonationsController = require('./controllers/DonationsController')
 const UsersController = require('./controllers/UsersController')
-const SerachController = require('./controllers/SearchController')
+const SearchController = require('./controllers/SearchController')
 
 const routes = Router()
 
-routes.get('/doacoes', DoacoesController.index)
-routes.post('/doacoes', DoacoesController.store)
+routes.get('/donations', DonationsController.index)
+routes.post('/donations', DonationsController.store)
 
-routes.get('/search', SerachController.index)
+routes.get('/search', SearchController.index)
 
 routes.post('/users', UsersController.store)
 
 routes.get('/shazam', (req, res) => {
-    console.log('shazam')
-
     res.json([{ name: "kakashi", id: 'aa1' }, { name: "guy", id: 'aa2' }])
 })
-
 
 //@arthurc_bot
 module.exports = routes
