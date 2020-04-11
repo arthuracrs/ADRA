@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom"
 
 import About from './Pages/About/'
 import Users from './Pages/Users'
-import Doacoes from './Pages/Donations/'
+import Donations from './Pages/Donations/'
 
 export default function Routes() {
   return (
@@ -11,7 +11,7 @@ export default function Routes() {
       <Switch>
         <Route path="/about" component={About} />
         <Route path="/users" component={Users} />
-        <Route path="/doacoes" component={Doacoes} />
+        <Route path="/donations" component={Donations} />
       </Switch>
     </BrowserRouter>
   )

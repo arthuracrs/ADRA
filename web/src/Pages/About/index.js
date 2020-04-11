@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react"
 
 import api from '../../services/api'
 import NavBar from '../../Components/NavBar/'
+import Loading from '../../Components/Loading/'
 
 export default function About() {
   const [response, setResponse] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   async function shazam() {
     const res = await api.get('/shazam')
@@ -13,12 +15,13 @@ export default function About() {
 
   useEffect(() => {
     shazam()
+    setTimeout(() => setIsLoading(false), 2000)
   }, [])
- 
+
   return (
     <div>
       <NavBar />
-      {response.map(x => <h1>{x.name}</h1>)}
+      {isLoading ? <Loading /> : response.map(x => <h1>{x.name}</h1>)}
     </div>
   )
 }

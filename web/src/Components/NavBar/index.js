@@ -12,7 +12,7 @@ export default function NavBar() {
                 <img src={logo} alt="" className="logo" />
                 <ul>
                     <li>
-                        <Link to="/doacoes" className="link">Doações</Link>
+                        <Link to="/donations" className="link">Doações</Link>
                     </li>
                     <li>
                         <Link to="/about" className="link">Sobre</Link>
