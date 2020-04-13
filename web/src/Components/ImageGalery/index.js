@@ -24,7 +24,10 @@ export default function ImageGalery(props) {
                     <input type="image" src="https://picsum.photos/200/300" alt="" onClick={() => setMainImage('https://picsum.photos/200/300')} />
                 </li>
                 <li>
-                    <input type="image" src="https://picsum.photos/200/300" alt="" onClick={() => setMainImage('https://picsum.photos/200/300')} />
+                <input type="image" src="https://picsum.photos/300/300" alt="" onClick={() => setMainImage('https://picsum.photos/300/300')} />
+                </li>
+                <li>
+                    <input type="image" src="https://picsum.photos/300/200" alt="" onClick={() => setMainImage('https://picsum.photos/300/200')} />
                 </li>
             </ul>
         </div>

@@ -1,7 +1,7 @@
 .galery{
+    width: 100%;
     height: max-content;
     box-sizing: border-box;
-    box-sizing: content-box;
 }
 
 .main-image{
@@ -18,10 +18,11 @@
 }
 
 .carousel {
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    width: max-content;
+    width: 100%;
     overflow: scroll;
     overflow-y: hidden;
     padding-bottom: 10px;
