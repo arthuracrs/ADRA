@@ -16,7 +16,8 @@
 }
 
 .grid-list li {
-    width: 100%;
+    max-width: 100%;
+
     list-style-type: none;
 }
 

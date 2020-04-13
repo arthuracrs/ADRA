@@ -1,14 +1,12 @@
 .galery{
     height: max-content;
     box-sizing: border-box;
-    padding: 10px;
+    box-sizing: content-box;
 }
 
 .main-image{
     height: max-content;
     margin-bottom: 10px;
-    overflow: hidden;
-    box-sizing: border-box;
     display: flex;
     justify-content: center;
 }
@@ -20,9 +18,10 @@
 }
 
 .carousel {
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    width: max-content;
     overflow: scroll;
     overflow-y: hidden;
     padding-bottom: 10px;
@@ -30,7 +29,6 @@
 
 .carousel li{
     height: 70px;
-    max-width: 100%;
     margin: 0 5px;
 }
 .carousel li:first-of-type{
@@ -43,7 +41,7 @@
 }
 
 .galery ::-webkit-scrollbar {
-    height: 5px;
+    height: 8px;
     background-color: lightgray;
     border-radius: 5px;
 }
