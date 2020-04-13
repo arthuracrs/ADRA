@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react"
+import { Link } from 'react-router-dom'
+
+
 import api from '../../services/api'
 
 import './style.css'
@@ -26,13 +29,13 @@ export default function Home() {
                         <div className='container-1'>
                             <img className="icon" alt="icon" src={x.doacao_data.tipo === 'alimento' ? basicbasket : tshirt} />
                             <ul className='donation-data'>
-                                <li> <strong>Nome: </strong>{x.doador_data.username}</li>
-                                <li><strong>Endereço: </strong> {x.doador_data.endereco}</li>
-                                <li><strong>Cidade: </strong>{x.doador_data.cidade}</li>
+                                <li> <strong>Nome: </strong><span>{x.doador_data.username}</span></li>
+                                <li><strong>Endereço: </strong><span> {x.doador_data.endereco}</span></li>
+                                <li><span>{x.doador_data.cidade}</span></li>
                             </ul>
                         </div>
                         <div className='container-2'>
-                            <a href='/#'>acessar</a>
+                            <Link to={`/donations/` + x._id}>Acessar</Link>
                         </div>
                     </div>)}
             </div>

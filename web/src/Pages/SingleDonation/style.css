@@ -1,0 +1,87 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.ghost-container {
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.donation-description {
+    max-width: 900px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 5px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+    gap: 30px;
+}
+
+.grid-list li {
+    width: 100%;
+    list-style-type: none;
+}
+
+.grid-list li span {
+    font-size: larger;
+    box-sizing: border-box;
+}
+
+.grid-list li .title {
+    color: #FC6D00;
+}
+
+.grid-list li .sub-p {
+    font-size: larger;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.grid-list li strong {
+    font-size: x-large;
+}
+
+.galery {
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    overflow-y: hidden;
+    height: 200px;
+    padding-bottom: 10px;
+}
+
+.galery img {
+    height: 100%;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.galery img+img {
+    margin: 0 15px;
+}
+
+li ::-webkit-scrollbar {
+    height: 5px;
+    background-color: lightgray;
+}
+
+li ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+li ::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 5px;
+}
+
+li ::-webkit-scrollbar-button {
+    display: none;
+}

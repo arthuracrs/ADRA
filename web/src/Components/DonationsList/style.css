@@ -36,8 +36,14 @@
   gap: 20px;
 }
 
-.donations-list .item .container-1 ul{
+.donations-list .item .container-1 ul {
   list-style-type: none;
+  font-size: large;
+}
+
+.donations-list .item .container-1 ul li{
+  display: flex;
+  flex-direction: column;
 }
 
 .donations-list .item .container-2 {

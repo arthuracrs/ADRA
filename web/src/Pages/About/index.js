@@ -15,7 +15,7 @@ export default function About() {
 
   useEffect(() => {
     shazam()
-    setTimeout(() => setIsLoading(false), 2000)
+    setTimeout(() => setIsLoading(false), 1000)
   }, [])
 
   return (

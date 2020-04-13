@@ -7,6 +7,7 @@ const SearchController = require('./controllers/SearchController')
 const routes = Router()
 
 routes.get('/donations', DonationsController.index)
+routes.get('/donations/:id', DonationsController.show)
 routes.post('/donations', DonationsController.store)
 
 routes.get('/search', SearchController.index)

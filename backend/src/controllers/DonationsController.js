@@ -6,7 +6,13 @@ module.exports = {
 
     response.send(queryResult)
   },
+  async show(request, response) {
+    const id = request.params.id
 
+    const queryResult = await Donations.findById({_id: id}).populate('doador_data')
+
+    response.json([queryResult])
+  },
   async store(request, response) {
 
     const {
