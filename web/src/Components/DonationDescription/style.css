@@ -1,0 +1,40 @@
+.donation-description {
+    max-width: 900px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 5px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+    gap: 30px;
+}
+
+.grid-list li {
+    width: 100%;
+    list-style-type: none;
+}
+
+.grid-list li span {
+    font-size: larger;
+    box-sizing: border-box;
+}
+
+.grid-list li .title {
+    color: #FC6D00;
+}
+
+.grid-list li .sub-p {
+    font-size: larger;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.grid-list li strong {
+    font-size: x-large;
+}
